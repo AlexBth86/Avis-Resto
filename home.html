@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Avis Resto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="AvisResto.com, trouvez les meilleurs restaurants près de chez vous">
+    <meta name="author" content="">
+    <link rel="icon" href="bootstrap-4.0.0/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/fontawesome-stars.css">
+</head>
+
+<body>
+
+    <!--************************************ HEADER ************************************-->
+
+    <header class="position-relative">
+        <div class="container-fluid d-inline-flex">
+            <div class="col-md-12 d-inline-flex flex-column justify-content-center">
+                <h1>Avis Resto</h1>
+                <h2>Trouvez les meilleurs restaurants près de chez vous !</h2>
+                <button type="button" id="launch-research-button" class="btn btn-lg launch-research">Lancer la recherche</button>
+            </div>
+        </div>
+        <div class="offset-md-5 col-md-2 offset-md-5 pictos-header position-absolute fixed-bottom">
+            <img id="picto-avis-resto" class="img-fluid" src="img/picto-avis-resto.svg" alt="picto-avis-resto"></br>
+            <img id="fleche-header" class="img-fluid" src="img/fleche.svg" alt="arrow">
+        </div>
+    </header>
+
+    <!--************************************ SECTION MAP ************************************-->
+
+    <section id="section-map">
+        <div class="container-fluid container-section-map">
+            <div class="row">
+                <div id="section-left" class="col-md-6">
+                    <div id="map-container"></div>
+                    <img src="">
+                    <button type="button" class="btn bouton-ajout-resto" data-toggle="modal" data-target="#addRestoModal"><img src="img/plus-commentaire.svg" class="plus-commentaire" alt="plus-commentaire">Ajouter un restaurant</button>
+                </div>
+
+                <!-- Bandeau nombre restaurant et Filtre -->
+
+                <div id="section-right" class="col-md-6 justify-content-center">
+                    <div id="header-list-scroll" class="sticky-top">
+                        <div class="d-flex justify-content-between">
+                            <p class="nbr-resto"></p>
+                            <p class="filtre-note">Filtrer par note <img src="img/triangle.svg" alt="triangle"></p>
+
+                            <!-- Filtre note -->
+
+                        </div>
+                        <div class="expand-filtre float-right">
+                            <div id="star-5" class="expand-filtre-row br-theme-fontawesome-stars">
+                                <div class="br-widget">
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                </div>
+                            </div>
+                            <div id="star-4" class="expand-filtre-row br-theme-fontawesome-stars">
+                                <div class="br-widget">
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class=""></a>
+                                </div>
+                            </div>
+                            <div id="star-3" class="expand-filtre-row br-theme-fontawesome-stars">
+                                <div class="br-widget">
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class=""></a>
+                                    <a class=""></a>
+                                </div>
+                            </div>
+                            <div id="star-2" class="expand-filtre-row br-theme-fontawesome-stars">
+                                <div class="br-widget">
+                                    <a class="br-active"></a>
+                                    <a class="br-active"></a>
+                                    <a class=""></a>
+                                    <a class=""></a>
+                                    <a class=""></a>
+                                </div>
+                            </div>
+                            <div id="star-1" class="expand-filtre-row br-theme-fontawesome-stars">
+                                <div class="br-widget">
+                                    <a class="br-active"></a>
+                                    <a class=""></a>
+                                    <a class=""></a>
+                                    <a class=""></a>
+                                    <a class=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="scroll-list-resto"></div>
+
+                    <!--******************** MODAL AJOUT RESTAURANT ***********************-->
+
+                    <div class="modal fade" id="addRestoModal" tabindex="-1" role="dialog" aria-labelledby="addRestoModalTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <form class="needs-validation" novalidate>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="col-md-10 info-new-resto-modal">
+                                            <h3>Ajouter un nouveau restaurant sur avisresto.com</h3>
+                                        </div>
+                                        <button type="button" id="close-rose" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"><img src="img/close.svg"></span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="adresse-modal">Complétez le formulaire ci-dessous pour ajouter un restaurant au site avisresto.com</p>
+                                        <input class="form-control" type="text" id="nom-new-resto" placeholder="Nom du restaurant" required>
+                                        <input class="form-control" type="text" id="num-adresse-new-resto" placeholder="N° de rue" required>
+                                        <input class="form-control" type="text" id="adresse-new-resto" placeholder="Adresse (nom de rue, allée…)" required>
+                                        <input class="form-control" type="text" id="code-postal-new-resto" placeholder="Code Postal" required>
+                                        <input class="form-control" type="text" id="ville-new-resto" placeholder="Ville" required>
+                                        <hr class="hr-label-map-resto">
+                                        <p class="label-map-resto"><strong>Cliquez sur la carte pour marquer l'emplacement du restaurant à ajouter</strong></p>
+                                        <div id="map-pop-in"></div>
+                                        <p class="label-note-resto">Votre note pour ce restaurant :</p>
+                                        <div class="star-rate-avis">
+                                            <select id="star-rating-2">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="user-comment-new-resto" rows="4" placeholder="Votre commentaire" required></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" id="bouton-valid-newResto" class="btn bouton-valid-newResto-modal">VALIDER L'AJOUT DU NOUVEAU RESTAURANT
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--********************  MODAL AJOUT COMMENTAIRE ********************-->
+
+                    <div class="modal fade" id="addAvisModal" tabindex="-1" role="dialog" aria-labelledby="addAvisModalTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <form class="needs-validation-2" novalidate>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="photo-resto-modal"><img src=""></div>
+                                        <div class="col-md-7 info-resto-modal">
+                                            <h3>Bronco</h3>
+                                            <p class="adresse">39 Rue des Petites Ecuries, 75010 Paris</p>
+                                        </div>
+                                        <button type="button" id="close-rose" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"><img src="img/close.svg"></span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>Ajouter un avis sur le restaurant</h3>
+                                        <p class="label-note-resto">Votre note pour ce restaurant :</p>
+                                        <div class="star-rate-avis">
+                                            <select id="star-rating-1">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="user-comment" rows="7" placeholder="Votre commentaire" required></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" id="bouton-valid-addAvis" class="btn bouton-valid-addAvis-modal">VALIDER VOTRE COMMENTAIRE</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--************************************ FOOTER ************************************-->
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row footer-picto-texte">
+                <div class="offset-md-1 col-md-1 footer-picto">
+                    <img id="footer-picto-avis-resto" src="img/picto-avis-resto.svg" alt="picto-avis-resto">
+                </div>
+                <div class="col-md-10 footer-baseline-all">
+                    <p id="title-footer">Avis Resto</p>
+                    <p id="footer-baseline">Trouvez les meilleurs restaurants près de chez vous !</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-md-1 col-md-5 contact">
+                    Pour nous contacter une seule adresse mail, <a href="mailto:contact@avisresto.com?Subject=Demande%20renseignements" target="_blank">contact@avisresto.com</a>
+                </div>
+                <div class="offset-md-3 col-md-2 offset-md-1 mentions-legales">© Avis Resto - 2018</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript ================================================== -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+    <script src="bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <!-- Script JS -->
+
+    <script src="js/maps.js"></script>
+    <script src="js/classeFicheResto.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/avisResto.js"></script>
+    <script src="js/jquery.barrating.min.js"></script>
+
+    <!--Google Maps-->
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOoJQ82zrvn75_pj4cRAjD0UxPJSQH2EU&callback=initialize&libraries=places">
+    </script>
+</body>
+
+</html>

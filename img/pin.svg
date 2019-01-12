@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="44px" viewBox="0 0 31 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Pin 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fiche-resto-expand" transform="translate(-22.000000, -35.000000)" fill="#EF5350">
+            <g id="Fiche-resto-+-photo" transform="translate(22.000000, 35.000000)">
+                <path d="M10.4628926,15.2297521 C10.4628926,12.4277232 12.7368203,10.1514051 15.5453539,10.1514051 C18.3528289,10.1514051 20.6267565,12.4277232 20.6267565,15.2297521 C20.6267565,18.0349544 18.3528289,20.3080991 15.5453539,20.3080991 C12.7368203,20.3080991 10.4628926,18.0349544 10.4628926,15.2297521 Z M4.50812391,4.50292088 C-0.908863026,9.91552275 -1.51757272,20.1092386 3.08109667,26.232661 L15.3960877,44 L27.7110787,26.232661 C32.3055136,20.1092386 31.6968039,9.91552275 26.279817,4.50292088 C20.2678825,-1.50097363 10.521117,-1.50097363 4.50812391,4.50292088 Z" id="Pin-1"></path>
+            </g>
+        </g>
+    </g>
+</svg>
