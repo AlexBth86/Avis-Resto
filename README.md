@@ -3,6 +3,7 @@
 ## What is "Avis-resto" for ?
 
 Based on the Google Maps and Places APIs, "Avis-resto" detects restaurants close to you.
+</br>https://alexandreberthon.com/avis-resto/
 
 ![avis-resto](img/screenshot1.png)
 ![avis-resto](img/screenshot2.png)
